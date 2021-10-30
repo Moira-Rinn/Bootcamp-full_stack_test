@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import PersonForm from '../components/PersonForm';
 
 const Main = () => {
   const [message, setMessage] = useState("Loading...")
@@ -9,7 +10,7 @@ const Main = () => {
   }, []);
   return (
     <div>
-      <h2>Message from the backend: {message}</h2>
+      <PersonForm />
     </div>
   )
 }

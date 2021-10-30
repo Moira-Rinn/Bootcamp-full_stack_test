@@ -1,11 +1,17 @@
 const express = require('express');
-const cors = require('cors')    /* This is new */
+const cors = require('cors')
 const app = express();
-app.use(cors())                 /* This is new */
+
+app.use(express.json());
+
+require("./config/mongoose.config");
+
+app.use(cors())
 require('./routes/person.routes')(app);
-app.listen(8000, () => {
-  console.log("Listening at Port 8000")
-})
+
+const PORT = 8000;
+
+app.listen(8000, () => console.log(`Server connected on port ${PORT}`))
 
 
 
